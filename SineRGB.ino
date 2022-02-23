@@ -61,9 +61,12 @@ void loop()
   {
     Brightness = (Brightness + 10) % 101;
 
+    // On Button-press, change CA-type
     CAType = (CAType + 1u) % 4u;
+    
     if( CAType )
     {
+      // Initialize Cells when CA enabled
       initCA();
     }
   }
@@ -86,13 +89,15 @@ void loop()
 
   if( CAType )
   {
+    // When CA is enabled, update and apply Cells
     updateCA();
   
     for( int i = 0; i < DISPLAYCOUNT; ++i )
     {
       int x = i % 5;
       int y = i / 5;
-      
+
+      // Decide on Cell state if applying the LED color or turn it off
       if( CS[x][y] )
       {
         Display.setPixelColor( i, Display.Color( R, G, B ) );
