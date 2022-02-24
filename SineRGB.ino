@@ -45,6 +45,12 @@ void setup()
   GSpeed = Speed * (float)random( 500, 1000 ) / 1000.0f;
   BSpeed = Speed * (float)random( 500, 1000 ) / 1000.0f;
         
+  if( CAType )
+  {
+    // Initialize Cells when CA enabled
+    initCA();
+  }
+  
   delay( 100 );
 }
 

@@ -4,7 +4,7 @@
 // 1: 2D CA with Conway's Game-of-Life rule. With random initialization.
 // 2: 2D CA with Conway's Game-of-Life rule. With glider initialization.
 // 3: 1D CA with random rule. Sliding and with random initialization.
-int CAType = 1;
+int CAType = 3;
 
 // Universe
 bool C0[5][5];
